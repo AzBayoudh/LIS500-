@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Machine Learning Project</title>
+
+   <!-- Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+   <!-- My styles -->
+   <link href="styles.css" rel="stylesheet" />
+
+   <!-- p5 + sound + ml5 for Teachable Machine -->
+   <!-- p5.js core -->
+   <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
+   <!-- p5 sound addon (microphone input) -->
+   <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/addons/p5.sound.min.js"></script>
+   <!-- ml5.js for Teachable Machine -->
+   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+   <!-- Our Teachable Machine sketch -->
+   <!-- This file contains the sound classifier code (YES / NO / QUIET) -->
+   <script src="sketch.js"></script>
+ </head>
+
+ <body>
+   <!-- Site header and navigation -->
+   <header>
+     <nav class="container my-3">
+       <a class="btn btn-outline-primary btn-sm me-2" href="index.html">Home</a>
+       <a class="btn btn-outline-primary btn-sm me-2" href="about.html">About Us</a>
+       <a class="btn btn-outline-primary btn-sm me-2" href="resources.html">Resources</a>
+       <a class="btn btn-outline-primary btn-sm me-2" href="hero.html">Tech Hero</a>
+       <!-- New nav item for the ML page -->
+       <a class="btn btn-primary btn-sm me-2" href="machine-learning.html" aria-current="page">Machine Learning</a>
+     </nav>
+   </header>
+
+   <main class="container">
+     <h1>Teachable Machine: Voice Classifier</h1>
+     <p>
+       On this page, we are using Google’s Teachable Machine to classify microphone input into three classes:
+       <strong>YES</strong>, <strong>NO</strong>, and <strong>QUIET</strong>. The emoji in the box below updates
+       based on what the model “hears.”
+     </p>
+
+     <div class="intro-box">
+       <h2 class="h5">Live Demo</h2>
+       <p>
+         When your browser asks for microphone permission, click <strong>Allow</strong>. Then try saying
+         “YES,” “NO,” or staying quiet and watch how the emoji changes.
+       </p>
+
+       <!-- p5.js will automatically insert the canvas here (into the body) -->
+       <!-- We just describe it for accessibility -->
+       <p class="text-muted">
+         The canvas below is generated with p5.js and ml5.js and shows our live Teachable Machine sound classifier.
+       </p>
+     </div>
+
+     <div class="intro-box">
+       <h2 class="h5">Demo Video</h2>
+       <p>
+         This short video records our Teachable Machine model in action as we trigger each class.
+       </p>
+       <!-- TODO: replace tm-demo.mp4 with your actual video filename -->
+       <video width="480" controls>
+         <source src="tm-demo.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+       </video>
+     </div>
+
+     <div class="intro-box">
+       <h2 class="h5">Project Statement &amp; Reflection</h2>
+       <!-- TODO: paste your ~1000 word project statement here for the final version -->
+       <!-- For iteration 1 you can start with a shorter draft and expand later -->
+       <p>
+         [This is where our project statement will go. We will describe how we created and trained the model,
+         the challenges we faced, and what lessons from Joy Buolamwini’s <em>Unmasking AI</em> stood out to us
+         while doing this assignment. We will also reflect on issues of bias, intersectionality, and who gets
+         “heard” or “ignored” by AI systems.]
+       </p>
+     </div>
+
+     <div class="intro-box">
+       <h2 class="h5">Project Details</h2>
+       <ul>
+         <li><strong>Group Members:</strong> Aziz Bayoudh, Momen [Last Name]</li>
+         <li><strong>Tool:</strong> Teachable Machine (Sound Project) + p5.js + ml5.js</li>
+         <li><strong>GitHub Repo:</strong>
+           <!-- TODO: replace with your actual repo link -->
+           <a href="https://github.com/your-username/your-repo" target="_blank">View project code on GitHub</a>
+         </li>
+       </ul>
+     </div>
+   </main>
+ </body>
+</html>
