@@ -5,7 +5,8 @@ let classifier;
 
 // STEP 1: Load the model!
 function preload() {
-  classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/hR02g_emx/model.json');
+  classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/hR02g_emx/');
+  //classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/hR02g_emx/model.json');
 }
 
 function setup() {
