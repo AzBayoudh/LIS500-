@@ -13,15 +13,11 @@
    <link href="styles.css" rel="stylesheet" />
 
    <!-- p5 + sound + ml5 for Teachable Machine -->
-   <!-- p5.js core -->
    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
-   <!-- p5 sound addon (microphone input) -->
    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/addons/p5.sound.min.js"></script>
-   <!-- ml5.js for Teachable Machine -->
    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 
    <!-- Our Teachable Machine sketch -->
-   <!-- This file contains the sound classifier code (YES / NO / QUIET) -->
    <script src="sketch.js"></script>
  </head>
 
@@ -33,7 +29,6 @@
        <a class="btn btn-outline-primary btn-sm me-2" href="about.html">About Us</a>
        <a class="btn btn-outline-primary btn-sm me-2" href="resources.html">Resources</a>
        <a class="btn btn-outline-primary btn-sm me-2" href="hero.html">Tech Hero</a>
-       <!-- New nav item for the ML page -->
        <a class="btn btn-primary btn-sm me-2" href="machine-learning.html" aria-current="page">Machine Learning</a>
      </nav>
    </header>
@@ -41,20 +36,18 @@
    <main class="container">
      <h1>Teachable Machine: Voice Classifier</h1>
      <p>
-       On this page, we are using Google’s Teachable Machine to classify microphone input into three classes:
-       <strong>YES</strong>, <strong>NO</strong>, and <strong>QUIET</strong>. The emoji in the box below updates
-       based on what the model “hears.”
+       On this page, we’re showcasing a sound-based machine learning project we built together using Google’s
+       Teachable Machine. Our goal was to teach a simple model to recognize <strong>YES</strong>, <strong>NO</strong>,
+       and <strong>QUIET</strong> through voice input. It’s a small example of how AI systems “learn” from the data
+       humans feed them — and how bias can easily sneak into that process.
      </p>
 
      <div class="intro-box">
        <h2 class="h5">Live Demo</h2>
        <p>
          When your browser asks for microphone permission, click <strong>Allow</strong>. Then try saying
-         “YES,” “NO,” or staying quiet and watch how the emoji changes.
+         “YES,” “NO,” or staying quiet and watch how the emoji changes in real time.
        </p>
-
-       <!-- p5.js will automatically insert the canvas here (into the body) -->
-       <!-- We just describe it for accessibility -->
        <p class="text-muted">
          The canvas below is generated with p5.js and ml5.js and shows our live Teachable Machine sound classifier.
        </p>
@@ -65,7 +58,6 @@
        <p>
          This short video records our Teachable Machine model in action as we trigger each class.
        </p>
-       <!-- TODO: replace tm-demo.mp4 with your actual video filename -->
        <video width="480" controls>
          <source src="tm-demo.mp4" type="video/mp4">
          Your browser does not support the video tag.
@@ -74,23 +66,67 @@
 
      <div class="intro-box">
        <h2 class="h5">Project Statement &amp; Reflection</h2>
-       <!-- TODO: paste your ~1000 word project statement here for the final version -->
-       <!-- For iteration 1 you can start with a shorter draft and expand later -->
+
+       <!-- 🔹 Aziz’s Sections: Intro + Training -->
+       <h3>Intro & Model Training</h3>
        <p>
-         [This is where our project statement will go. We will describe how we created and trained the model,
-         the challenges we faced, and what lessons from Joy Buolamwini’s <em>Unmasking AI</em> stood out to us
-         while doing this assignment. We will also reflect on issues of bias, intersectionality, and who gets
-         “heard” or “ignored” by AI systems.]
+         For this project, our group decided to build a Teachable Machine that could recognize sound. We wanted something
+         simple but interactive, so we trained a model that listens for three categories — <strong>YES</strong>,
+         <strong>NO</strong>, and <strong>QUIET</strong>. The idea was to explore how training data shapes a model’s behavior
+         and connect that experience to the ideas from Joy Buolamwini’s <em>Unmasking AI</em>.
+       </p>
+
+       <p>
+         I handled most of the training process and the setup for connecting our model to the website. We started by recording
+         voice samples,  each of us saying “YES” and “NO” multiple times and capturing a few seconds of silence for “QUIET.”
+         Our first version didn’t perform great. The model kept mixing things up and reacting to background noise. That made
+         us realize how much the results depend on the data you feed it. We retrained it with more balanced samples, focusing
+         on clearer, consistent recordings.
+       </p>
+
+       <p>
+         Even after that, the model recognized my voice better than my partners’. It struggled with different tones and accents,
+         which really connected to what Joy Buolamwini writes about, how algorithmic bias starts from uneven data. If a system
+         is only trained on a narrow range of input, it’ll work best for people who match that input and less accurately for
+         everyone else. It’s a small project, but it shows how bias can appear even without bad intentions.
+       </p>
+
+       <p>
+         Once the model worked, I used <code>ml5.js</code> and <code>p5.js</code> to integrate it into our site. It took a few
+         tries, I kept running into missing script errors and wrong model URLs, but eventually it came together. Watching the
+         emoji respond in real time to our voices was honestly cool. It made all the debugging worth it and gave us something
+         visual to share on this page.
+       </p>
+
+       <!-- 🔹 Partner Placeholder: Testing & Demo -->
+       <h3>[Partner 1: Testing & Demo]</h3>
+       <p>
+         [This section will cover how we tested the model together, recorded the demo video, and what we observed when different
+         people or environments affected accuracy.]
+       </p>
+
+       <!-- 🔹 Partner Placeholder: Reflection on Unmasking AI -->
+       <h3>[Partner 2: Reflection on Unmasking AI]</h3>
+       <p>
+         [This section will focus on how our group connected what we learned during the project to Joy Buolamwini’s
+         <em>Unmasking AI</em>. It should talk about algorithmic bias, fairness, representation, and how small projects like ours
+         mirror larger issues in AI.]
+       </p>
+
+       <!-- 🔹 Placeholder for Group Conclusion -->
+       <h3>[Group Conclusion]</h3>
+       <p>
+         [This section will summarize what the group learned overall, about bias, teamwork, and human choices in training
+         machine learning models. It can tie everything together for the final version.]
        </p>
      </div>
 
      <div class="intro-box">
        <h2 class="h5">Project Details</h2>
        <ul>
-         <li><strong>Group Members:</strong> Aziz Bayoudh, Momen [Last Name]</li>
+         <li><strong>Group Members:</strong> Aziz Bayoudh, Momen [Last Name], [Partner 2 Name]</li>
          <li><strong>Tool:</strong> Teachable Machine (Sound Project) + p5.js + ml5.js</li>
          <li><strong>GitHub Repo:</strong>
-           <!-- TODO: replace with your actual repo link -->
            <a href="https://github.com/AzBayoudh/LIS500-" target="_blank">View project code on GitHub</a>
          </li>
        </ul>
