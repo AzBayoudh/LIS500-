@@ -5,12 +5,14 @@ let classifier;
 
 // STEP 1: Load the model!
 function preload() {
+  console.log("preload running…");
   classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/hR02g_emx/');
-  //classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/hR02g_emx/model.json');
+ 
 }
 
 function setup() {
-  createCanvas(640, 520);
+  const canvas = createCanvas(640, 300);
+  canvas.parent("tm-canvas-container");
 
   classifyAudio();
 }
@@ -36,7 +38,7 @@ function draw() {
   emoji = "❌";
 }
 
-  textSize(256);
+  textSize(150);
   text(emoji, width / 2, height / 2);
 }
 
@@ -47,6 +49,8 @@ function gotResults(error, results) {
     console.error(error);
     return;
   }
+
+  console.log(results);
   label = results[0].label;
 }
 
